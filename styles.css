@@ -1,0 +1,124 @@
+body {
+    background-color: #008080;
+    font-family: "W98", "Tahoma", sans-serif;
+    margin: 0;
+    height: 100vh;
+    cursor: url('cursor/arrow.cur'), default;
+}
+.ranura{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 53px);
+}
+.item {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    
+}
+.item a{
+    text-decoration: none !important;
+    display: flex;
+    flex-direction: column;
+
+}
+.item img{
+    height: 60%;
+}
+.item p {
+    font-size: 11px;
+    color:white !important;
+    margin: 2px 0 2px 0;
+}
+footer {
+    z-index:9999;
+    position: absolute;
+    bottom: 0;
+    background-color: #c0c0c0;
+    width: 100%;
+    height: 35px;
+    border-top: 3px solid #dbdbdb;
+}
+footer button{
+    cursor: url('cursor/pointer.cur'), pointer;
+    background-color: #c0c0c0;
+    margin:1px 6px 2px 0px;
+    height: calc(100% - 1px);
+    width: 85px;
+    border-top: 3px solid #dbdbdb;
+    border-left:3px solid #dbdbdb;
+    border-bottom: 3px solid #000000;
+    border-right: 3px solid #000000;
+}
+footer button:active{
+
+    border-top: 3px solid #000000;
+    border-left:3px solid #000000;
+    border-bottom: 3px solid #dbdbdb;
+    border-right: 3px solid #dbdbdb;
+}
+footer button img {
+    width: 100%;
+    height: 80% !important;
+    margin: 0px;
+    
+}
+footer button:active img {
+    transform: scale(0.9);
+}
+.ventana {
+    position: absolute;
+    width: 500px;
+    top: 100px;
+    left: 100px;
+    border-top: 2px solid #dbdbdb;
+    border-left: 2px solid #dbdbdb;
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    padding: 4px;
+    background: #c0c0c0;
+}
+.a_column{
+    display:flex;
+    padding: 3px;
+}
+.barra {
+    background-image: linear-gradient(to right, #000080 , #1084d0);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2px 0 0;
+    cursor: grab;
+    font-weight: bold;
+}
+.logo_notepad{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.iconos_entrada button{
+    border-radius: 0;
+    border-top: 2px solid #dbdbdb;
+    border-left: 2px solid #dbdbdb;
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+}
+
+.contenido {
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+    border-bottom: 2px solid #dbdbdb;
+    border-right: 2px solid #dbdbdb;
+
+    background-color: white;
+    font-size: 15px;
+    padding: 10px;
+    min-height: 100px;
+}

@@ -1,43 +1,61 @@
+<!-- Hola, soy Eric lol.
+
+Cursores: http://www.rw-designer.com/cursor-detail/151740
+Assets: https://win98icons.alexmeub.com/
+
+NO HE COPIADO LA WEB DE LOS ASSETS, SOLO HE USADO LOS ICONOS!!!
+
+Y SÍ, PASO DE USAR 98.css-->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escritorio Windows 98</title>
-    <style>
-        body {
-            background-color: #008080;
-            font-family: "Tahoma", sans-serif;
-            margin: 0;
-            height: 100vh;
-        }
-        .window {
-            width: 300px;
-            background-color: #C0C0C0;
-            border: 2px solid #000;
-            position: absolute;
-            top: 50px;
-            left: 50px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-        }
-        .title-bar {
-            background-color: #000080;
-            color: white;
-            padding: 5px;
-            font-weight: bold;
-        }
-        .content {
-            padding: 10px;
-            height: 200px;
-            background-color: white;
-            overflow: auto;
-        }
-    </style>
+    <title>W98 - Eric</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tipografias.css">
 </head>
 <body>
-    <div class="window">
-        <div class="title-bar">Bloc de notas</div>
-        <div class="content">Eric</div>
+    <div class="ranura">
+        <a href="#" class="item">
+            <img src="/images/recycle_bin_empty-0.png">
+            <p>Basura</p>
+        </a>
+        <a href="#" class="item">
+            <img src="/images/computer_explorer-2.png">
+            <p>Mi Ordenador</p>
+        </a>
+        <a href="#" class="item" id="openNotepad">
+            <img src="/images/notepad-5.png">
+            <p>Presentación.txt</p>
+        </a>
     </div>
+    <div class="ventana" id="notepadWindow">
+        <div id="barra" class="barra">
+            <div class="a_column">
+                <img src="/images/notepad-0.png" class="logo_notepad">
+                <div>Presentación - Bloc de Notas</div>
+            </div>
+            <div class="iconos_entrada">
+                <button id="closeNotepad">
+                    <img src="/images/close-icon.png">
+                </button>
+            </div>
+        </div>
+        <div style="height: 5px;;"></div>
+        <div class="contenido">Hola!!!! <img style='display:inline; height: 15px;' src='/images/utopia_smiley.png'/><br>
+        Soy Eric, un desarrollador frontend de 17 años!<br>
+        Creo esta web para un proyecto de clase, per tambien uso esta web para ir practicando Webs, que se me va olvidando!<br>
+        Me encanta el estilo de Windows 98, iré actualizando la web de vez en cuando, cuando aprenda JavaScript será épico!!!</div>
+        </div>
+
+    <script src="script.js"></script>
+    <footer>
+        <button>
+            <img src="/images/start-button.png" class="start-menu">
+        </button>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'W98';
+    src: url('tipografia/MSW98UI-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'W98';
+    src: url('tipografia/MSW98UI-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
