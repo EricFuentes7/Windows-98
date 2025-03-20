@@ -1,8 +1,3 @@
-# SMX-Test-Domain
- Web para enlazar con un dominio nominalia.
-
-
-
 <p align="center">
   <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e1c1e851-5311-4b6a-9152-25ceddb54472/dh9vacj-8c73b829-b66f-4523-9a20-f2adfa97af18.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2UxYzFlODUxLTUzMTEtNGI2YS05MTUyLTI1Y2VkZGI1NDQ3MlwvZGg5dmFjai04YzczYjgyOS1iNjZmLTQ1MjMtOWEyMC1mMmFkZmE5N2FmMTguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.39cvNbWgpvEVmusQb_bwuZ6j4dVyjfCg95-nJVlKHeU" alt="Microsoft Clip Meme">
 </p>
