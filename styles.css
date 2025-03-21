@@ -94,6 +94,7 @@ footer button:active img {
     padding: 4px;
     background: #c0c0c0;
 }
+
 .a_column{
     display:flex;
     padding: 3px;
@@ -113,14 +114,26 @@ footer button:active img {
     height: 20px;
     margin-right: 10px;
 }
-.iconos_entrada button{
-    border-radius: 0;
-    border-top: 2px solid #dbdbdb;
-    border-left: 2px solid #dbdbdb;
-    border-bottom: 2px solid #000000;
-    border-right: 2px solid #000000;
+.iconos_entrada button {
+    border-top: 2px solid #dbdbdb !important;
+    border-left: 2px solid #dbdbdb !important;
+    border-bottom: 2px solid #000000 !important;
+    border-right: 2px solid #000000 !important;
+    background: #c0c0c0;
+    padding: 2px;
+    margin-left: 2px;
 }
 
+.iconos_entrada button:active {
+    border-top: 2px solid #000000 !important;
+    border-left: 2px solid #000000 !important;
+    border-bottom: 2px solid #dbdbdb !important;
+    border-right: 2px solid #dbdbdb !important;
+}
+.iconos_entrada img {
+    width: 16px;
+    height: 16px;
+}
 .contenido {
     border-top: 2px solid #000000;
     border-left: 2px solid #000000;
@@ -131,4 +144,17 @@ footer button:active img {
     font-size: 15px;
     padding: 10px;
     min-height: 100px;
+}
+
+.ventana2 {
+    position: absolute;
+    width: 300px;
+    top: 100px;
+    left: 100px;
+    border-top: 2px solid #dbdbdb;
+    border-left: 2px solid #dbdbdb;
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    padding: 4px;
+    background: #c0c0c0;
 }
