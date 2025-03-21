@@ -5,6 +5,11 @@ body {
     height: 100vh;
     cursor: url('cursor/arrow.cur'), default;
 }
+img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
 .ranura{
     display: flex;
     gap: 15px;
