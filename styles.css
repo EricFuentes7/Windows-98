@@ -4,6 +4,7 @@ body {
     margin: 0;
     height: 100vh;
     cursor: url('cursor/arrow.cur'), default;
+    overflow: hidden;
 }
 img {
     image-rendering: pixelated;
@@ -25,12 +26,15 @@ img {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    cursor: url('cursor/pointer.cur'), pointer;
+
     
 }
 .item:hover p{
     background-color: #000080;
     padding-left: 5px;
     padding-right: 5px;
+    
 }
 .item a{
     text-decoration: none !important;
@@ -157,4 +161,24 @@ footer button:active img {
     border-right: 2px solid #000000;
     padding: 4px;
     background: #c0c0c0;
+}
+
+#blueScreen {
+    display: none;
+    position: absolute;
+    color: white;
+    top: 0;
+    z-index: 9999999;
+    background-color: #0102aa;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.winError {
+    color: #0102aa !important;
+    text-align: center;
+    width: 100px;
+    background-color: #a5a4aa;
 }

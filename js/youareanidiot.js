@@ -1,16 +1,16 @@
+let openWindows = []; // Declaración global
+
 class BouncingWindow {
     constructor(element) {
         this.element = element;
-        this.maxSpeed = 16; // Velocidad máxima permitida
-        this.initialSpeed = 6; // Velocidad inicial
-        this.reboteIntenso = 1.1; // Multiplicador de rebote
+        this.maxSpeed = 16;
+        this.initialSpeed = 6;
+        this.reboteIntenso = 1.1;
 
-        // Posición inicial aleatoria dentro de la pantalla visible
         this.x = Math.random() * (window.innerWidth - this.element.offsetWidth);
-        this.y = Math.random() * (window.innerHeight - this.element.offsetHeight - 53); // Ajuste para la ranura
+        this.y = Math.random() * (window.innerHeight - this.element.offsetHeight - 53);
 
-        // Dirección inicial aleatoria (ángulo random)
-        const angle = Math.random() * 2 * Math.PI; // Ángulo en radianes (0 a 2π)
+        const angle = Math.random() * 2 * Math.PI;
         this.velocityX = Math.cos(angle) * this.initialSpeed;
         this.velocityY = Math.sin(angle) * this.initialSpeed;
 
@@ -21,11 +21,10 @@ class BouncingWindow {
     update() {
         if (!this.animating) return;
 
-        // Aplicamos aceleración constante pero limitada
         this.velocityX *= 1.001;
         this.velocityY *= 1.001;
 
-        // Limitar velocidad máxima
+        // Limitar velocidad
         if (Math.abs(this.velocityX) > this.maxSpeed) {
             this.velocityX = this.maxSpeed * Math.sign(this.velocityX);
         }
@@ -36,32 +35,29 @@ class BouncingWindow {
         this.x += this.velocityX;
         this.y += this.velocityY;
 
-        // Límites de la ranura (height: calc(100% - 53px))
         const ranuraHeight = window.innerHeight - 53;
         const elementWidth = this.element.offsetWidth;
         const elementHeight = this.element.offsetHeight;
 
-        // Rebote en bordes horizontales
+        // Rebotes ajustados
         if (this.x < 0) {
             this.velocityX = Math.abs(this.velocityX) * this.reboteIntenso;
-            this.x = 0; // Asegurarse de que no se salga
+            this.x = 0;
         }
-        if (this.x + elementWidth > window.innerWidth) {
+        if (this.x + elementWidth > window.innerWidth - 1) {  // Rebote derecho mejorado
             this.velocityX = -Math.abs(this.velocityX) * this.reboteIntenso;
-            this.x = window.innerWidth - elementWidth; // Asegurarse de que no se salga
+            this.x = window.innerWidth - elementWidth - 1;
         }
 
-        // Rebote en bordes verticales (limitado por la ranura)
         if (this.y < 0) {
             this.velocityY = Math.abs(this.velocityY) * this.reboteIntenso;
-            this.y = 0; // Asegurarse de que no se salga
+            this.y = 0;
         }
         if (this.y + elementHeight > ranuraHeight) {
             this.velocityY = -Math.abs(this.velocityY) * this.reboteIntenso;
-            this.y = ranuraHeight - elementHeight; // Asegurarse de que no se salga
+            this.y = ranuraHeight - elementHeight;
         }
 
-        // Aplicar posición
         this.element.style.left = `${this.x}px`;
         this.element.style.top = `${this.y}px`;
 
@@ -78,34 +74,31 @@ function createIdiotWindow() {
     windowDiv.className = 'ventana2';
     windowDiv.style.position = 'absolute';
 
+    // Audio
+    const audio = new Audio('/audio/you-are-an-idiot.mp3');
+    audio.loop = true;
+    audio.play().catch(error => console.error('Audio error:', error));
+
     // Barra de título
     const barra = document.createElement('div');
     barra.className = 'barra';
 
     const titleContainer = document.createElement('div');
     titleContainer.className = 'a_column';
-
     const icon = document.createElement('img');
     icon.className = 'logo_notepad';
     icon.src = '/images/html-0.png';
-
     const title = document.createElement('div');
     title.textContent = 'YOU ARE AN IDIOT';
-
     titleContainer.append(icon, title);
 
     // Botón cerrar
     const closeBtnContainer = document.createElement('div');
     closeBtnContainer.className = 'iconos_entrada';
-
     const closeBtn = document.createElement('button');
-    const closeIcon = document.createElement('img');
-    closeIcon.src = '/images/close-icon.png';
-    closeBtn.appendChild(closeIcon);
-
+    closeBtn.innerHTML = '<img src="/images/close-icon.png">';
     closeBtnContainer.appendChild(closeBtn);
 
-    // Ensamblar barra
     barra.append(titleContainer, closeBtnContainer);
 
     // Contenido
@@ -116,35 +109,52 @@ function createIdiotWindow() {
     gif.style.width = '277px';
     content.appendChild(gif);
 
-    // Ensamblar ventana
-    windowDiv.append(barra, document.createElement('div'), content);
+    // Ensamblar
+    windowDiv.append(barra, content);
     document.body.appendChild(windowDiv);
 
-    // Crear instancia de rebote
+    // Sistema de rebote
     const bouncingWindow = new BouncingWindow(windowDiv);
 
-    // Funcionalidad de cerrar
+    // Registrar ventana
+    const windowData = {
+        element: windowDiv,
+        bouncingWindow: bouncingWindow,
+        audio: audio
+    };
+    openWindows.push(windowData);
+
+    // Verificar si se supera el límite de ventanas
+    if (openWindows.length >= MAX_WINDOWS_FOR_CRASH) {
+        triggerBSOD(); // Activar BSOD automáticamente
+    }
+
+    // Control de cierre
     closeBtn.addEventListener('click', () => {
         bouncingWindow.stop();
+        audio.pause();
         windowDiv.remove();
+        openWindows = openWindows.filter(w => w !== windowData);
     });
 
-    // Funcionalidad de arrastre
+    // Arrastre
     let isDragging = false;
-    let dragStartX, dragStartY;
+    let dragOffset = { x: 0, y: 0 };
 
     barra.addEventListener('mousedown', (e) => {
         isDragging = true;
         bouncingWindow.animating = false;
-        dragStartX = e.clientX - windowDiv.offsetLeft;
-        dragStartY = e.clientY - windowDiv.offsetTop;
+        dragOffset = {
+            x: e.clientX - windowDiv.offsetLeft,
+            y: e.clientY - windowDiv.offsetTop
+        };
         barra.style.cursor = 'grabbing';
     });
 
     document.addEventListener('mousemove', (e) => {
         if (isDragging) {
-            bouncingWindow.x = e.clientX - dragStartX;
-            bouncingWindow.y = e.clientY - dragStartY;
+            bouncingWindow.x = e.clientX - dragOffset.x;
+            bouncingWindow.y = e.clientY - dragOffset.y;
             windowDiv.style.left = `${bouncingWindow.x}px`;
             windowDiv.style.top = `${bouncingWindow.y}px`;
         }
@@ -159,16 +169,15 @@ function createIdiotWindow() {
         }
     });
 
-    // Crear nueva ventana al hacer clic en el GIF
+    // Propagación de ventanas
     gif.addEventListener('click', () => {
         createIdiotWindow();
+        audio.play().catch(() => {});
     });
 }
 
-document.getElementById('troyano').addEventListener('click', function(e) {
+// Inicializador
+document.getElementById('troyano').addEventListener('click', (e) => {
     e.preventDefault();
-    // Crear 3 ventanas iniciales para mejor efecto
-    createIdiotWindow();
-    createIdiotWindow();
-    createIdiotWindow();
+    for (let i = 0; i < 3; i++) createIdiotWindow();
 });
