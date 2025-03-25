@@ -4,6 +4,7 @@ body {
     margin: 0;
     height: 100vh;
     cursor: url('cursor/arrow.cur'), default;
+    overflow: hidden;
 }
 img {
     image-rendering: pixelated;
@@ -25,12 +26,15 @@ img {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    cursor: url('cursor/pointer.cur'), pointer;
+
     
 }
 .item:hover p{
     background-color: #000080;
     padding-left: 5px;
     padding-right: 5px;
+    
 }
 .item a{
     text-decoration: none !important;
@@ -97,6 +101,8 @@ footer button:active img {
 
 .a_column{
     display:flex;
+        align-items: center;
+
     padding: 3px;
 }
 .barra {
@@ -157,4 +163,94 @@ footer button:active img {
     border-right: 2px solid #000000;
     padding: 4px;
     background: #c0c0c0;
+}
+
+#blueScreen {
+    display: none;
+    position: absolute;
+    color: white;
+    top: 0;
+    z-index: 9999999;
+    background-color: #0102aa;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.winError {
+    color: #0102aa !important;
+    text-align: center;
+    width: 100px;
+    background-color: #a5a4aa;
+}
+.contenido_carp{
+    display: flex;
+    gap:30px
+}
+.separar{
+    background-color: #0000002b;
+
+    margin: 0;
+    width: 1px;
+}
+.carpeta_izquierda img {
+    height: 24px;
+    width: 24px;
+}
+.carpeta_izquierda a{
+    display: flex;
+    flex-direction: row !important;
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none !important;
+}
+.carpeta_izquierda p {
+    margin-left: 10px;
+}
+.item_carpeta {
+    height: 40px;
+    margin-left: 50px;
+    flex-direction: row;
+    gap: 10px;
+    text-decoration: none;
+    display: flex;
+    margin-bottom: 16px;
+}
+.item_carpeta p{
+    color:#000000 !important;
+    font-size: 13px;
+    
+}
+.item_carpeta:hover p{
+    text-decoration: underline solid #000080;
+
+}
+.ventana3{
+    
+    width: 700px; 
+    top: 100px;
+    left: 700px;
+}
+.a_buscar{
+    display:flex;
+    flex-direction:row !important;
+    background-color: white;
+    margin-left: 10px;
+    height: 20px;
+    width: 90%;
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+    padding: 2px;
+    margin-bottom: 5px;
+
+}
+.a_buscar p{
+    height: 100%;
+    margin: 0;
+    margin-left: 5px;
+
+}
+.busqueda{
+    align-items: center;
 }
