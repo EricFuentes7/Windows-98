@@ -89,7 +89,7 @@ footer button:active img {
 .ventana {
     position: absolute;
     width: 500px;
-    top: 100px;
+    top: 20px;
     left: 100px;
     border-top: 2px solid #dbdbdb;
     border-left: 2px solid #dbdbdb;
@@ -183,7 +183,6 @@ footer button:active img {
     text-align: center;
     width: 100px;
     background-color: #a5a4aa;
-<<<<<<< HEAD
 }
 .contenido_carp{
     display: flex;
@@ -230,8 +229,8 @@ footer button:active img {
 .ventana3{
     
     width: 700px; 
-    top: 100px;
-    left: 700px;
+    top: 250px;
+    left: 300px;
 }
 .a_buscar{
     display:flex;
@@ -254,6 +253,4 @@ footer button:active img {
 }
 .busqueda{
     align-items: center;
-=======
->>>>>>> 87209f82c3fe20ff07cf5fea77ee677008bc7ef3
 }
