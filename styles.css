@@ -11,13 +11,17 @@ img {
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
   }
-.ranura{
+.ranura {
     display: flex;
-    gap: 15px;
     flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: flex-start;
     width: 100%;
     height: calc(100% - 53px);
+    padding: 0;
 }
+
 .item {
     width: 80px;
     height: 80px;
@@ -27,9 +31,10 @@ img {
     align-items: center;
     text-decoration: none;
     cursor: url('cursor/pointer.cur'), pointer;
-
-    
+    text-align: center;
+    margin: 0; 
 }
+
 .item:hover p{
     background-color: #000080;
     padding-left: 5px;
@@ -47,9 +52,25 @@ img {
 }
 .item p {
     font-size: 11px;
-    color:white !important;
-    margin: 2px 0 2px 0;
+    color: white !important;
+    margin: 2px 0;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 80%; 
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
 }
+
+.item p.long-word {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 footer {
     z-index:9999;
     position: absolute;
@@ -89,7 +110,7 @@ footer button:active img {
 .ventana {
     position: absolute;
     width: 500px;
-    top: 100px;
+    top: 20px;
     left: 100px;
     border-top: 2px solid #dbdbdb;
     border-left: 2px solid #dbdbdb;
@@ -101,6 +122,8 @@ footer button:active img {
 
 .a_column{
     display:flex;
+        align-items: center;
+
     padding: 3px;
 }
 .barra {
@@ -181,4 +204,81 @@ footer button:active img {
     text-align: center;
     width: 100px;
     background-color: #a5a4aa;
+}
+.contenido_carp{
+    display: flex;
+    gap:30px
+}
+.separar{
+    background-color: #0000002b;
+
+    margin: 0;
+    width: 1px;
+}
+.carpeta_izquierda img {
+    height: 24px;
+    width: 24px;
+}
+.carpeta_izquierda a{
+    display: flex;
+    flex-direction: row !important;
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none !important;
+}
+.carpeta_izquierda p {
+    margin-left: 10px;
+}
+.item_carpeta {
+    height: 40px;
+    margin-left: 50px;
+    flex-direction: row;
+    gap: 10px;
+    text-decoration: none;
+    display: flex;
+    margin-bottom: 16px;
+}
+.item_carpeta p{
+    color:#000000 !important;
+    font-size: 13px;
+    
+}
+.item_carpeta:hover p{
+    text-decoration: underline solid #000080;
+
+}
+.ventana3{
+    
+    width: 700px; 
+    top: 20px;
+    left: 100px;
+}
+.a_buscar{
+    display:flex;
+    flex-direction:row !important;
+    background-color: white;
+    margin-left: 10px;
+    height: 20px;
+    width: 90%;
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+    padding: 2px;
+    margin-bottom: 5px;
+
+}
+.a_buscar p{
+    height: 100%;
+    margin: 0;
+    margin-left: 5px;
+
+}
+.busqueda{
+    align-items: center;
+}
+
+.AdImage{
+    width: 30%;
+    position: absolute;
+    bottom:38px;
+    right: 0px;
 }

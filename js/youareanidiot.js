@@ -35,7 +35,7 @@ class BouncingWindow {
         this.x += this.velocityX;
         this.y += this.velocityY;
 
-        const ranuraHeight = window.innerHeight - 53;
+        const ranuraHeight = window.innerHeight - 37;
         const elementWidth = this.element.offsetWidth;
         const elementHeight = this.element.offsetHeight;
 

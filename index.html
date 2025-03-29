@@ -12,7 +12,14 @@ ACLARACIÓN, TODO EL TEMA FRONT END (DISEÑO) LO HE HECHO YO, LO QUE ES PROGRAMA
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    
+    <link rel="icon" type="image/x-icon" href="favico.ico">
+
+    <meta name="description" content="Work in progress: a faithful replica of the Windows 98 desktop. Relive the classic interface, retro icons, and original experience—all from your browser. Plus, discover Krigger of Crypto, a rising name in the crypto world. Stay tuned for a nostalgic journey back to the golden era of computing!">  
+    <meta name="keywords" content="Windows 98, Windows 98 replica, classic Windows, retro computing, vintage OS, Windows nostalgia, Windows 98 emulator, Windows 98 online, Windows 98 interface, Windows 98 icons, 90s computing, Microsoft Windows 98, Windows 98 experience, Windows 98 simulation, Windows 98 desktop, Windows 98 theme, Windows 98 UI, Windows 98 startup, Windows 98 aesthetics, Windows 98 programs, Windows 98 games, Windows 98 browser version, Windows 98 style, old school Windows, Windows 98 fan project, nostalgic Windows experience, Windows 98 computing, Windows 98 operating system, Windows 98 virtual desktop, Krigger of Crypto, crypto trends, blockchain, Dani Rayos">
+
+    <meta name="description" content="En desarrollo: una réplica fiel del escritorio de Windows 98. Revive la interfaz clásica, los iconos retro y la experiencia original, todo desde tu navegador. Además, descubre Krigger of Crypto, una referencia emergente en el mundo cripto. ¡No te pierdas este viaje nostálgico a la era dorada de la informática!">  
+    <meta name="keywords" content="Windows 98, réplica de Windows 98, Windows clásico, informática retro, sistema operativo vintage, nostalgia Windows, emulador de Windows 98, Windows 98 en línea, interfaz de Windows 98, iconos de Windows 98, informática de los 90, Microsoft Windows 98, experiencia Windows 98, simulación Windows 98, escritorio Windows 98, tema Windows 98, UI de Windows 98, inicio de Windows 98, estética de Windows 98, programas Windows 98, juegos Windows 98, versión navegador Windows 98, estilo Windows 98, Windows antiguo, proyecto fan de Windows 98, experiencia nostálgica Windows, informática Windows 98, sistema operativo Windows 98, escritorio virtual Windows 98, Krigger of Crypto, tendencias cripto, blockchain, Dani Rayos">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>W98 - Eric</title>
@@ -29,6 +36,10 @@ ACLARACIÓN, TODO EL TEMA FRONT END (DISEÑO) LO HE HECHO YO, LO QUE ES PROGRAMA
             <img src="/images/computer_explorer-2.png">
             <p>Mi Ordenador</p>
         </a>
+        <a href="#" class="item" id="openFolder">
+            <img src="/images/directory_closed-4.png">
+            <p>Mis Cosas</p>
+        </a>  
         <a href="#" class="item" id="openNotepad">
             <img src="/images/notepad-5.png">
             <p>Presentación.txt</p>
@@ -37,6 +48,11 @@ ACLARACIÓN, TODO EL TEMA FRONT END (DISEÑO) LO HE HECHO YO, LO QUE ES PROGRAMA
             <img src="/images/html-2.png">
             <p>YouAreAnIdiot</p>
         </a>
+        <a href="#" class="item" id="krigger">
+            <img src="/images/krigger-5.png">
+            <p>Krigger of Crypto</p>
+        </a>
+              
     </div>
     <div class="ventana" id="notepadWindow">
         <div id="barra" class="barra">
@@ -58,7 +74,66 @@ ACLARACIÓN, TODO EL TEMA FRONT END (DISEÑO) LO HE HECHO YO, LO QUE ES PROGRAMA
             Me encanta el estilo de Windows 98, iré actualizando la web de vez en cuando, cuando aprenda JavaScript será épico!!!
         </div>
     </div>
+
+
+    <div class="ventana ventana3" id="folderWindow" style="display: none;">
+        <div id="barra" class="barra">
+            <div class="a_column">
+                <img src="/images/directory_closed-1.png" class="logo_folder" style="margin-right:5px;">
+                <div>Mis Cosas</div>
+            </div>
+            <div class="iconos_entrada">
+                <button id="closeFolder">
+                    <img src="/images/close-icon.png">
+                </button>
+            </div>
+        </div>
+        <div style="height: 5px;"></div>
+        
+        <div class="busqueda" style="display: flex;">
+            <div>Address</div>
+            <div class="a_buscar">
+                <img src="/images/directory_closed-1.png">
+                <p>Mi Ordenador</p>
+            </div>
+        </div>  
+        <div class="contenido contenido_carp">
+            <div class="carpeta_izquierda">
+                <a href="#">
+                    <img src="/images/removable_disk_drive-0.png">
+                    <p>Local Disk (C:)</p>
+                </a>
+                <a href="#">
+                    <img src="/images/removable_disk_drive-0.png">
+                    <p>Local Disk (D:)</p>
+                </a> <a href="#">
+                    <img src="/images/removable_disk_drive-0.png">
+                    <p>Local Disk (E:)</p>
+                </a>
+            </div>
+            <span class="separar"></span>
+            <div class="todos_archivos">
+                <p>▼ Archivos (1)</p>
+                <div class="cosas_de_carpeta">
+                    <a href="#" class="item_carpeta">
+                        <img src="/images/file_padlock.png">
+                        <p>Secreto.txt</p>
+                    </a>
+                     <a href="#" class="item_carpeta">
+                        <img src="/images/file_padlock.png">
+                        <p>Secreto2.txt</p>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
     
+    <div class="AdWare" style="display:none;"> <!-- Esto aún está por crear -->
+        <img src="/images/AD.png" class="AdImage">
+
+    </div>
+
     <div id="blueScreen">
         <p class="winError"><b>Windows</b></p>
         <div class="toLeft">
