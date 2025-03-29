@@ -11,13 +11,17 @@ img {
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
   }
-.ranura{
+.ranura {
     display: flex;
-    gap: 15px;
     flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: flex-start;
     width: 100%;
     height: calc(100% - 53px);
+    padding: 0;
 }
+
 .item {
     width: 80px;
     height: 80px;
@@ -27,9 +31,10 @@ img {
     align-items: center;
     text-decoration: none;
     cursor: url('cursor/pointer.cur'), pointer;
-
-    
+    text-align: center;
+    margin: 0; 
 }
+
 .item:hover p{
     background-color: #000080;
     padding-left: 5px;
@@ -47,9 +52,25 @@ img {
 }
 .item p {
     font-size: 11px;
-    color:white !important;
-    margin: 2px 0 2px 0;
+    color: white !important;
+    margin: 2px 0;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 80%; 
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
 }
+
+.item p.long-word {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 footer {
     z-index:9999;
     position: absolute;
@@ -253,4 +274,11 @@ footer button:active img {
 }
 .busqueda{
     align-items: center;
+}
+
+.AdImage{
+    width: 30%;
+    position: absolute;
+    bottom:38px;
+    right: 0px;
 }
