@@ -16,15 +16,6 @@ const folderBarra = folderWindow.querySelector('.barra');
 
 let currentDraggedWindow = null;
 let offsetX, offsetY;
-document.querySelectorAll('.item p').forEach(function(paragraph) {
-    const text = paragraph.innerText.trim();
-    const wordCount = text.split(' ').length;
-
-    // Si tiene más de una palabra, aplicamos el estilo para que se dividan
-    if (wordCount > 1) {
-        paragraph.classList.add('long-word');
-    }
-});
 
 // Funciones para abrir/cerrar
 document.getElementById("openNotepad").addEventListener("click", () => {
